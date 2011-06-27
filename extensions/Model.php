@@ -35,13 +35,18 @@ class Model extends \lithium\data\Model {
 			case 'ping':
 			case 'send':
 			case 'query':
+			case 'startbatch':
+			case 'senditem':
+			case 'quicksend':
+			case 'endbatch':
+			case 'send_bulk':
 				$self = static::_object();
 				$conn = $self::connection();
 				return $conn->invokeMethod($method, $params); // forward
 				break;
 		}
 
-		return $self->invokeMethod($method, $params); // ignore
+		return parent::__callStatic($method, $params); // ignore
 	}
 }
 
