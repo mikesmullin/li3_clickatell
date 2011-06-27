@@ -164,12 +164,15 @@ class Clickatell extends \lithium\data\source\Http {
 	 */
 	public function send($to, $txt) {
 		return $this->_query('/http/sendmsg', array(
-			'session_id' => $this->authenticate(),
-			'to'		 => $to,
-			'text'		 => $txt,
-		) + (empty($this->_config['from'])? array() : array(
-			'mo'         => 1, // enables reply ability
-			'from'       => $this->_config['from']
+			'session_id'	=> $this->authenticate(),
+			'to'			=> $to,
+			'text'			=> $txt,
+		) + (empty($this->_config['from'])? array() : array( // optional
+			'mo'			=> 1, // enables reply ability
+			'from'			=> $this->_config['from'],
+		)) + (empty($this->_config['callback'])? array() : array( // optional
+			'callback'		=> $this->_config['callback'], // determines how server will respond
+			'deliv_ack'		=> 1 // acknowledge delivery
 		)));
 	}
 

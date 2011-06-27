@@ -6,6 +6,20 @@ use li3_clickatell\extensions\model\Behaviors;
 
 class Model extends \lithium\data\Model {
 
+	public static function getApiId() {
+		return static::getConfig('api_id');
+	}
+
+	public static function getFrom() {
+		return static::getConfig('from');
+	}
+
+	private static function getConfig($field) {
+		$self = static::_object();
+		$conn = $self::connection();
+		return $conn->_config[$field];
+	}
+
 	/**
 	 * Catches all context method calls and, if it's proper to call,
 	 * starts the API request process. Otherwise invokes the method.

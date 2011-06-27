@@ -2,8 +2,6 @@
 
 The Lithium PHP SMS Library for API.Clickatell.com
 
-**SPONSORED BY:** [Revolution Messaging](http://revolutionmessaging.com/)
-
 ## Introduction
 
 To use this library, you will need sign up for an account at www.clickatell.com. The easiest one to sign up for for testing purposes is their Small Business U.S. account which is just $25/mo. and supports Two-Way Messaging. When you signup, it currently does not prompt you for a credit card right away. You can signup for free and you get 10 texts. But once you validate your email they will ask for your credit card. This is optional and you can test without it. You will not be able to customize the message body unless you call and talk to them. If you need more than 10 texts thats when you enter your credit card number to get the full 500 quota.
