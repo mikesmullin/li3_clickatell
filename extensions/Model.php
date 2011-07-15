@@ -29,7 +29,7 @@ class Model extends \lithium\data\Model {
 	 * @param array $params
 	 * @return mixed
 	 */
-	public static function __callStatic($method, Array $params = array()) {
+	public static function __callStatic($method, $params) {
 		switch ($method) {
 			case 'authenticate':
 			case 'ping':
