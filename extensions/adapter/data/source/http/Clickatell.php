@@ -84,8 +84,8 @@ class Clickatell extends \lithium\data\source\Http {
 					static $tries = 0;
 					if ($this->authenticate(true) && $tries++ < 1) { // if it works
 						$this->_query($path, $data); // try one more time
+						break;
 					}
-					break;
 				case '002': // Unknown username or password
 				case '004': // Account frozen
 				case '007': // IP Lockdown violation You have locked down the API instance to a specific IP address and then sent from an IP address different to the one you set.
